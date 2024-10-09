@@ -1,0 +1,6 @@
+@CountryFilterAPI_HostAddress = http://localhost:5003
+
+GET {{CountryFilterAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
