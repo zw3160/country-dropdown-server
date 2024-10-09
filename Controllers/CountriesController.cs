@@ -4,8 +4,8 @@ using System.Text.Json;
 
 namespace CountryFilterAPI.Controllers
 {
-    [ApiController]
     [Route("api/countries")]
+    [ApiController]
     public class CountriesController : ControllerBase
     {
         private readonly HttpClient _httpClient;
@@ -15,8 +15,7 @@ namespace CountryFilterAPI.Controllers
             _httpClient = httpClient;
         }
 
-        [HttpGet]
-        [Route("/{mainland}")]
+        [HttpGet("{mainland}")]
         public async Task<IActionResult> GetAsianCountries(string mainland)
         {
             var response = await _httpClient.GetAsync("https://restcountries.com/v2/all");
@@ -35,5 +34,7 @@ namespace CountryFilterAPI.Controllers
 
             return Ok(result);
         }
+
+
     }
 }
