@@ -16,7 +16,7 @@ namespace CountryFilterAPI.Controllers
         }
 
         [HttpGet("{mainland}")]
-        public async Task<IActionResult> GetAsianCountries(string mainland)
+        public async Task<IActionResult> GetCountries(string mainland)
         {
             var response = await _httpClient.GetAsync("https://restcountries.com/v2/all");
 
